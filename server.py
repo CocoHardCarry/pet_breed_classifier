@@ -20,16 +20,9 @@ def predict(file_name):
 
     results = pet_breed_model.predict(file_name)
     print(results)
-    breed = results[0]
-    breed_index = results[1]
-    accuracy = results[2][breed_index]
-    if accuracy > 0.9:
-        img_title = f"{breed} - {accuracy * 100}% confident."
-    else:
-        img_title = f"I am not sure what this is, it might be {breed} - {accuracy * 100}% confident."
 
-    img = PILImage.create(img)
-    img.show(title=img_title)
+    #img = PILImage.create(img)
+    #mg.show(title=img_title)
 
 st.text("Cat vs Dog Classifier")
 st.text("Built by Jayden Hang")
