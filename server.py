@@ -18,7 +18,7 @@ def predict(file_name):
     img = PILImage.create(file_name)
     prediction, idx, accuracy = pet_breed_model.predict(img)
 
-    results = pet_breed_model.predict(file_name)
+    results = pet_breed_model.predict(img)
     print(prediction)
 
     #img = PILImage.create(img)
