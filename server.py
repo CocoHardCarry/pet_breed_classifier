@@ -20,6 +20,7 @@ def predict(file_name):
 
     results = pet_breed_model.predict(img)
     print(prediction)
+    print(accuracy)
 
     #img = PILImage.create(img)
     #mg.show(title=img_title)
