@@ -16,7 +16,7 @@ pet_breed_model = load_learner("pet_breed_model.pkl")
 
 def predict(file_name):
     img = PILImage.create(file_name)
-    prediction, idx, accuracy = pet_breed_model.predict(img)
+    prediction, idx, accuracy = pet_breed_model.predict(file_name)
 
     results = pet_breed_model.predict(file_name)
     print(results)
