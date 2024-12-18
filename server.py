@@ -20,6 +20,14 @@ def predict(file_name):
 
     results = pet_breed_model.predict(img)
     print(results)
+    breed = results[0]
+    breed_index = results[1]
+    accuracy = results[2][breed_index]
+    if accuracy > 0.9:
+        return f"{breed} - {accuracy * 100}% confident."
+    else:
+        return f"I am not sure what this is, it might be {breed} - {accuracy * 100}% confident."
+
 
 
 st.text("Cat vs Dog Classifier")
