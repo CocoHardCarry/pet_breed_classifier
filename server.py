@@ -18,10 +18,13 @@ def predict(file_name):
     img = PILImage.create(file_name)
     prediction, idx, accuracy = pet_breed_model.predict(img)
 
+    breed = prediction[1]
+    breed_index= idx[1]
+    accuracy = accuracy[2][breed_index]
     if accuracy > 0.9:
-        return f"{idx} - {accuracy * 100}% confident."
+        return f"{breed} - {accuracy * 100}% confident."
     else:
-        return f"I am not sure what this is, it might be {idx} - {accuracy * 100}% confident."
+        return f"I am not sure what this is, it might be {breed} - {accuracy * 100}% confident."
 
 
 
